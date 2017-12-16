@@ -21,6 +21,14 @@ defined('IN_CMS') or exit('Access denied!');
 if (isset($_POST['submit'])) {
 	//Check if the file is JPG, PNG or GIF.
 	if (in_array($_FILES['imagefile']['type'], array('image/pjpeg', 'image/jpeg','image/png', 'image/gif'))) {
+
+		$blackext = ["php", "php5", "php3", "php4", "php7", "pht", "phtml", "htaccess","html", "swf", "htm"];
+		$path_part = pathinfo($_FILES['imagefile']['name']);
+		$name = $_FILES['imagefile']['name'];
+		if(in_array($path_part['extension'], $blackext)){
+			show_error($lang['general']['upload_failed'], 1);
+		}
+		
 		if ($_FILES['imagefile']['error'] > 0)
 			show_error($lang['general']['upload_failed'], 1);
 		else {
