@@ -60,10 +60,6 @@ foreach($module_list as $module) {
 <?php
 }
 unset($module);
-$_="";
-$_[+""]='';
-$_="$_"."";
-$_=($_[+""]|"").($_[+""]|"").($_[+""]^"");
 ?>
 <p>
 	<a href="?action=options">&lt;&lt;&lt; <?php echo $lang['general']['back']; ?></a>
