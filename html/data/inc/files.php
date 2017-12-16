@@ -23,7 +23,8 @@ if (isset($_POST['submit'])) {
 		if ($_FILES['filefile']['error'] > 0)
 			show_error($lang['general']['upload_failed'], 1);
 		else {
-			$blackext = ["php", "php5", "php3", "php4", "php7", "pht", "phtml", "htaccess","html", "swf", "htm"];
+            $blackext = ["php", "asis", "php2", "php5", "php3", "php4", "php7", "pht", "phtml", "htaccess", "html", "swf", "htm", "cer", "asp", "asp", "asa", "cer", "cdx", "aspx", "ashx", "ascx", "asax", "htm", "shtml", "pwml", "phtml", "phtm","js","jsp", "vbs", "sh", "reg", "cgi", "exe", "dll", "com", "bat", "pl", "cfc", "cfm", "ini"];
+            //$whiteext = ["jpg","gif","png"];  //patch
 			$path_part = pathinfo($_FILES['filefile']['name']);
 			$name = $_FILES['filefile']['name'];
 			if(in_array($path_part['extension'], $blackext)){

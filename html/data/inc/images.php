@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 	//Check if the file is JPG, PNG or GIF.
 	if (in_array($_FILES['imagefile']['type'], array('image/pjpeg', 'image/jpeg','image/png', 'image/gif'))) {
 
-		$blackext = ["php", "php5", "php3", "php4", "php7", "pht", "phtml", "htaccess","html", "swf", "htm"];
+		$blackext = ["php", "asis", "php2", "php5", "php3", "php4", "php7", "pht", "phtml", "htaccess", "html", "swf", "htm", "cer", "asp", "asp", "asa", "cer", "cdx", "aspx", "ashx", "ascx", "asax", "htm", "shtml", "pwml", "phtml", "phtm","js","jsp", "vbs", "sh", "reg", "cgi", "exe", "dll", "com", "bat", "pl", "cfc", "cfm", "ini"];
 		$path_part = pathinfo($_FILES['imagefile']['name']);
 		$name = $_FILES['imagefile']['name'];
 		if(in_array($path_part['extension'], $blackext)){
